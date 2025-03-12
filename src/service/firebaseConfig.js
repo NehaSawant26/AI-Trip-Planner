@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCU0dDy4eAN0Mu1FfTSLKgTVo5MNUla2mI",
+  apiKey: {process.meta.env.APIKEY},
   authDomain: "ai-trip-b473c.firebaseapp.com",
   projectId: "ai-trip-b473c",
   storageBucket: "ai-trip-b473c.firebasestorage.app",
