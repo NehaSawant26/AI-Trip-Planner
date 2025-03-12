@@ -1,22 +1,16 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDHy3auHxO_aUHgQXZbGOHCuapKDEYRpOQ",
-  authDomain: "trip-planner2-65a43.firebaseapp.com",
-  projectId: "trip-planner2-65a43",
-  storageBucket: "trip-planner2-65a43.appspot.com",
-  messagingSenderId: "371421790498",
-  appId: "1:371421790498:web:c17eaf809e351f4e5ee57b"
+  apiKey: "AIzaSyCU0dDy4eAN0Mu1FfTSLKgTVo5MNUla2mI",
+  authDomain: "ai-trip-b473c.firebaseapp.com",
+  projectId: "ai-trip-b473c",
+  storageBucket: "ai-trip-b473c.firebasestorage.app",
+  messagingSenderId: "697485856909",
+  appId: "1:697485856909:web:49bb6a18187baf055192c4",
+  measurementId: "G-YT8F1QHYK9"
 };
 
-// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 

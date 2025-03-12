@@ -10,8 +10,6 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 import { FcGoogle } from "react-icons/fc";
 import { useGoogleLogin } from "@react-oauth/google"
@@ -27,7 +25,6 @@ function CreateTrip() {
   const [openDialog,setOpenDialog]=useState(false);
   const [loading,setLoading]=useState(false);
   const navigate=useNavigate();
-
 
   const handleInputChange=(name,value)=>{
     setFromData({
@@ -56,6 +53,7 @@ function CreateTrip() {
     }
     toast("Form generated.");
     setLoading(true);
+
     const FINAL_PROMPT=AI_PROMPT
     .replace('{location}',formData?.location)
     .replace('{totalDays}',formData?.totalDays)
@@ -63,7 +61,6 @@ function CreateTrip() {
     .replace('{budget}',formData?.budget)
 
     const result=await chatSession.sendMessage(FINAL_PROMPT);
-    // console.log("--",result?.response?.text());
     setLoading(false);
     SaveAiTrip(result?.response?.text());
   } 
@@ -109,7 +106,7 @@ function CreateTrip() {
           apiKey={import.meta.env.VITE_GOOGLE_PLACES_API_KEY}
           selectProps={{
             place,
-            onChange:(v)=>{setPlace(v); handleInputChange('location',v.label)}
+            onChange:(value)=>{setPlace(value); handleInputChange('location',value.label)}
           }}
         />
        </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '../ui/button';
 import {
   Popover,
@@ -15,17 +15,10 @@ import {
 import { FcGoogle } from "react-icons/fc";
 import axios from 'axios';
 
-
-
 function Header() {
   const user=JSON.parse(localStorage.getItem('user'));
   const [openDialog,setOpenDialog]=useState(false);
-
   
-  useEffect(() =>{
-    console.log(user)
-  },[])
-
   const login=useGoogleLogin({
     onSuccess:(codeResp)=>GetUserProfile(codeResp),
     onError:(error)=>console.log(error)
